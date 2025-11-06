@@ -151,6 +151,30 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* ======= Estilos del cuestionario ======= */
+    #cuestionario form {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+    }
+    #cuestionario ol {
+      padding-left: 20px;
+    }
+    #cuestionario button {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 15px;
+    }
+    #cuestionario button:hover {
+      background: #00ccaa;
+    }
   </style>
 </head>
 <body>
@@ -169,7 +193,6 @@
     <a href="#experiencias">Experiencias</a>
     <a href="#talleres">Talleres</a>
     <a href="#informatica">Informática</a>
-    <a href="#manos">Manos a la obra</a>
   </nav>
 
   <section id="introduccion">
@@ -188,7 +211,7 @@
   </section>
 
   <section id="experiencias">
-    <h2>Consejos y Experiencias de los Estudiantes</h2>
+    <h2>Experiencias de Profesores y Estudiantes</h2>
     <div class="contenedor">
       <div class="card">
         <h3>Santiago Martorelli</h3>
@@ -206,9 +229,8 @@
       <div class="card">
         <h3>Ramiro Caballero</h3>
         <p>
-          La programación, especialmente en el lenguaje C++, me permitió desarrollar diversas capacidades tanto en el ámbito de la electrónica como en el de la informática. Gracias a ello, pude realizar distintos proyectos utilizando placas como Arduino y ESP.
-Además, considero que la informática tiene un papel fundamental en el mundo industrial, especialmente en todo lo relacionado con los PLC.
-En resumen, creo que la informática y la electrónica son la base de gran parte de la tecnología que utilizamos hoy en día.
+          Alumno de Tafí Viejo (Tucumán), hizo propuestas para introducir programación en
+          la escuela con netbooks en el aula.
         </p>
       </div>
       <div class="card">
@@ -269,12 +291,61 @@ En resumen, creo que la informática y la electrónica son la base de gran parte
     </p>
   </section>
 
+  <!-- ======= CUESTIONARIO ======= -->
+  <section id="cuestionario">
+    <h2>🧩 Cuestionario sobre la Programación e Informática</h2>
+    <p>Completá este breve cuestionario para repasar lo aprendido:</p>
+
+    <form id="quizForm">
+      <ol>
+        <li>
+          ¿Por qué es importante aprender a programar hoy en día?<br>
+          <label><input type="radio" name="q1" value="correcto"> Porque ayuda a crear y entender el mundo digital.</label><br>
+          <label><input type="radio" name="q1" value="incorrecto"> Porque es obligatorio en todas las escuelas.</label><br>
+          <label><input type="radio" name="q1" value="incorrecto"> Porque reemplaza todas las demás materias.</label>
+        </li><br>
+
+        <li>
+          ¿Qué incluye el hardware?<br>
+          <label><input type="radio" name="q2" value="incorrecto"> Programas y aplicaciones.</label><br>
+          <label><input type="radio" name="q2" value="correcto"> Los componentes físicos de la computadora.</label><br>
+          <label><input type="radio" name="q2" value="incorrecto"> Solo los cables de red.</label>
+        </li><br>
+
+        <li>
+          ¿Qué permite la inteligencia artificial?<br>
+          <label><input type="radio" name="q3" value="correcto"> Que las máquinas aprendan y tomen decisiones.</label><br>
+          <label><input type="radio" name="q3" value="incorrecto"> Que las computadoras funcionen sin electricidad.</label><br>
+          <label><input type="radio" name="q3" value="incorrecto"> Que los programas nunca se actualicen.</label>
+        </li><br>
+
+        <li>
+          ¿Cuál es el objetivo del programa "Argentina 4.0"?<br>
+          <label><input type="radio" name="q4" value="correcto"> Capacitar personas en programación y habilidades digitales.</label><br>
+          <label><input type="radio" name="q4" value="incorrecto"> Enseñar historia de la tecnología.</label><br>
+          <label><input type="radio" name="q4" value="incorrecto"> Crear videojuegos para niños.</label>
+        </li><br>
+
+        <li>
+          ¿Por qué es importante la seguridad informática?<br>
+          <label><input type="radio" name="q5" value="correcto"> Protege la información contra robos y virus.</label><br>
+          <label><input type="radio" name="q5" value="incorrecto"> Sirve para borrar archivos antiguos.</label><br>
+          <label><input type="radio" name="q5" value="incorrecto"> Acelera los juegos de computadora.</label>
+        </li>
+      </ol>
+
+      <p id="resultado" style="margin-top:15px; font-weight:bold;"></p>
+      <button type="button" id="btnReiniciar">🔄 Reiniciar cuestionario</button>
+    </form>
+  </section>
+
   <footer>
     <p>Página hecha por <strong>Julieta Maciel</strong>, alumna de informática 6to 2da.</p>
     <p>Hecho con HTML5, CSS y JavaScript</p>
   </footer>
 
   <script>
+    /* ======= SCRIPT DE LA PORTADA ======= */
     const text = "Redes | Seguridad | Programación | Experiencias";
     const typing = document.getElementById("typing-text");
     let i = 0;
@@ -293,6 +364,7 @@ En resumen, creo que la informática y la electrónica son la base de gran parte
       intro.style.opacity = "0";
       setTimeout(() => intro.style.display = "none", 1000);
     });
+
     const temas = [
       {
         titulo: "Hardware",
@@ -330,6 +402,25 @@ En resumen, creo que la informática y la electrónica son la base de gran parte
         <img src="${tema.imagen}" alt="${tema.titulo}">
       `;
     }
+
+    // ======= CUESTIONARIO INTERACTIVO =======
+    const quizForm = document.getElementById("quizForm");
+    const resultado = document.getElementById("resultado");
+    const btnReiniciar = document.getElementById("btnReiniciar");
+
+    quizForm.addEventListener("change", () => {
+      let puntos = 0;
+      const respuestas = quizForm.querySelectorAll("input[type='radio']:checked");
+      respuestas.forEach(r => {
+        if (r.value === "correcto") puntos++;
+      });
+      resultado.textContent = `Tu puntaje actual: ${puntos}/5`;
+    });
+
+    btnReiniciar.addEventListener("click", () => {
+      quizForm.reset();
+      resultado.textContent = "";
+    });
   </script>
 </body>
 </html>
