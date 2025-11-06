@@ -291,7 +291,6 @@
     </p>
   </section>
 
-  <!-- ======= CUESTIONARIO ======= -->
   <section id="cuestionario">
     <h2>🧩 Cuestionario sobre la Programación e Informática</h2>
     <p>Completá este breve cuestionario para repasar lo aprendido:</p>
@@ -338,6 +337,10 @@
       <button type="button" id="btnReiniciar">🔄 Reiniciar cuestionario</button>
     </form>
   </section>
+  <section id ="qr" style="text-aling:center;padding:40px;background-color:#111;">
+    <h2>Escaneá el codigo QR para visitar la página desde tu celular</h2>
+    <img src="img/codigoQR.jpg" width="200" height="200">
+  </section>
 
   <footer>
     <p>Página hecha por <strong>Julieta Maciel</strong>, alumna de informática 6to 2da.</p>
@@ -345,7 +348,6 @@
   </footer>
 
   <script>
-    /* ======= SCRIPT DE LA PORTADA ======= */
     const text = "Redes | Seguridad | Programación | Experiencias";
     const typing = document.getElementById("typing-text");
     let i = 0;
@@ -402,8 +404,6 @@
         <img src="${tema.imagen}" alt="${tema.titulo}">
       `;
     }
-
-    // ======= CUESTIONARIO INTERACTIVO =======
     const quizForm = document.getElementById("quizForm");
     const resultado = document.getElementById("resultado");
     const btnReiniciar = document.getElementById("btnReiniciar");
