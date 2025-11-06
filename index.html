@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El mundo de la programación</title>
+  <style>
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #0a0a0a 40%, #000 100%);
+      color: #00ffcc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      transition: opacity 1s ease;
+    }
+    .intro-title {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+    .intro-subtitle {
+      font-size: 1.1em;
+      color: #00ffaa;
+      margin-bottom: 30px;
+      height: 25px;
+    }
+    #enter-btn {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #enter-btn:hover {
+      background: #00ccaa;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: rgba(0,0,0,0.5);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+    nav {
+      background: rgba(0,0,0,0.6);
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #ffcc00;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      width: 280px;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.2);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #00e5ff;
+    }
+    .tema-btn {
+      background: #ff9800;
+      border: none;
+      padding: 10px 18px;
+      margin: 8px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: #fff;
+    }
+    .tema-btn:hover {
+      background: #e68900;
+    }
+    #panelInfo {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+      text-align: justify;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    #panelInfo img {
+      max-width: 320px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+      margin-top: 30px;
+      font-size: 0.9em;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="intro">
+    <h1 class="intro-title">El Mundo de la Programación</h1>
+    <p class="intro-subtitle" id="typing-text"></p>
+    <button id="enter-btn">Entrar</button>
+  </div>
+
+  <header>
+    <h1>El mundo de la programación</h1>
+  </header>
+
+  <nav>
+    <a href="#introduccion">Introducción</a>
+    <a href="#experiencias">Experiencias</a>
+    <a href="#talleres">Talleres</a>
+    <a href="#informatica">Informática</a>
+    <a href="#manos">Manos a la obra</a>
+  </nav>
+
+  <section id="introduccion">
+    <h2>Introducción</h2>
+    <p>
+      Te presentamos experiencias de profesores, entrevistas, videojuegos y un especial
+      para que empieces a explorar este mundo. La computadora y el lenguaje de la
+      programación te abren la puerta a un universo sin límites, lleno de posibilidades
+      para expresarte y crear. Es mucho más fácil y divertido de lo que imaginás.
+    </p>
+    <p>
+      Saber programar hoy en día es tan importante como saber leer y escribir. También es
+      una forma especial de pensar y entender el mundo digital. Con la programación, podés
+      crear cosas nuevas: videojuegos, animaciones, programas interactivos y mucho más.
+    </p>
+  </section>
+
+  <section id="experiencias">
+    <h2>Consejos y Experiencias de los Estudiantes</h2>
+    <div class="contenedor">
+      <div class="card">
+        <h3>Santiago Martorelli</h3>
+        <p>
+          Para mi es un beneficio el saber programar ya que te permite trabajar para el extranjero manteniendo tu lugar de residencia, Ademas esto te permite ganar un buen sueldo en monedas extranjeras, por ej: dolares,euros.etc
+        </p>
+      </div>
+      <div class="card">
+        <h3>Bautista Cerino </h3>
+        <p>
+         la programación abarca muchas areas; desde la publicidad de tu negocio a través de una página hasta la elaboración de programa de seguridad. me permitió desarrollar habilidades: como desarrollar páginas web, calculadoras y hasta juegos.
+         considero que todos deben saber aunque sea lo básico, ya que aunque no parezca es una herramienta que puede marcar la diferencia
+        </p>
+      </div>
+      <div class="card">
+        <h3>Ramiro Caballero</h3>
+        <p>
+          La programación, especialmente en el lenguaje C++, me permitió desarrollar diversas capacidades tanto en el ámbito de la electrónica como en el de la informática. Gracias a ello, pude realizar distintos proyectos utilizando placas como Arduino y ESP.
+Además, considero que la informática tiene un papel fundamental en el mundo industrial, especialmente en todo lo relacionado con los PLC.
+En resumen, creo que la informática y la electrónica son la base de gran parte de la tecnología que utilizamos hoy en día.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Emiliano Dominguez</h3>
+        <p>
+          Entre a informática por el futuro que tiene en la industria de trabajo, es el futuro, además me permitió el uso de mi notebook vieja que no funcionaba! tuve que aprender a arreglarla a la fuerza para poder aprobar y lo hice! realmente es una materia donde el esfuerzo y la dedicación se pone a prueba, lo cual se transformó en determinación y éxito en mi vida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="talleres">
+    <h2>Aprender a Programar gratis en Argentina</h2>
+    <p>
+      Argentina ofrece una variedad de recursos y programas gratuitos para aprender a programar,
+      por ejemplo existe el Programa "Argentina 4.0".
+      Se trata de un programa nacional y federal que tiene como objetivo capacitar a personas en lenguajes y conocimientos sobre programación,
+      testing y habilidades digitales para potenciar la empleabilidad en el sector del software y la tecnología.
+    </p>
+    <p>
+      En Argentina se impulsa que los niños a partir de los 8 años puedan aprender a programar con Scratch, una plataforma sencilla y visual que les permite crear juegos, animaciones e historias interactivas. De esta manera, se fomenta que desde temprana edad los chicos se acerquen al mundo de la programación, desarrollen la creatividad, el pensamiento lógico y la capacidad de resolver problemas. Promover este aprendizaje temprano ayuda a que cada vez más personas se interesen en la tecnología y en el futuro puedan desenvolverse mejor en un mundo cada vez más digital.
+    </p>
+  </section>
+
+  <section id="informatica">
+    <h2>El impacto de la informática</h2>
+    <p>
+      La informática es una disciplina esencial en la vida moderna. A través de ella, podemos comprender cómo funciona la tecnología que usamos a diario: los sistemas operativos, los programas, las redes y la inteligencia artificial.
+    </p>
+    <p>
+      Explorá los temas clave haciendo clic en los botones:
+    </p>
+
+    <div style="text-align:center;">
+      <button class="tema-btn" onclick="mostrarTema(0)">💻 Hardware</button>
+      <button class="tema-btn" onclick="mostrarTema(1)">🧠 Software</button>
+      <button class="tema-btn" onclick="mostrarTema(2)">🌐 Redes</button>
+      <button class="tema-btn" onclick="mostrarTema(3)">🔒 Seguridad</button>
+      <button class="tema-btn" onclick="mostrarTema(4)">🤖 Inteligencia Artificial</button>
+    </div>
+
+    <div id="panelInfo">
+      <p>Seleccioná un tema para aprender más sobre informática...</p>
+    </div>
+  </section>
+
+  <section id="recomendacion">
+    <h2>Recomendación</h2>
+    <p>
+      Si te gusta jugar videojuegos, te recomiendo que pruebes
+      <a href="https://www.pilas-engine.com.ar" target="_blank" style="color: #ffcc00;">Pilas Engine</a>,
+      una herramienta pensada para que chicos y chicas de todas las edades aprendan
+      a programar a partir de juegos.
+    </p>
+    <p>
+      Programar es divertido, fácil y muy útil. Si querés explorar este mundo,
+      buscá notas, entrevistas, videojuegos y recursos que te inspiren a crear.
+    </p>
+  </section>
+
+  <footer>
+    <p>Página hecha por <strong>Julieta Maciel</strong>, alumna de informática 6to 2da.</p>
+    <p>Hecho con HTML5, CSS y JavaScript</p>
+  </footer>
+
+  <script>
+    const text = "Redes | Seguridad | Programación | Experiencias";
+    const typing = document.getElementById("typing-text");
+    let i = 0;
+
+    function typeEffect() {
+      if (i < text.length) {
+        typing.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 80);
+      }
+    }
+    typeEffect();
+
+    document.getElementById("enter-btn").addEventListener("click", () => {
+      const intro = document.getElementById("intro");
+      intro.style.opacity = "0";
+      setTimeout(() => intro.style.display = "none", 1000);
+    });
+    const temas = [
+      {
+        titulo: "Hardware",
+        descripcion: "El hardware incluye todos los componentes físicos de una computadora: procesadores, memoria, discos, cables, placas y periféricos. Gracias a los avances tecnológicos, hoy existen dispositivos más rápidos, pequeños y eficientes que nunca.",
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQxg38fD86N4DcWdlbIkyMLLXoBo0mt6aUeQ&"
+      },
+      {
+        titulo: "Software",
+        descripcion: "El software es el alma del hardware. Incluye los sistemas operativos, programas y aplicaciones que hacen posible todo lo que ves en la pantalla. Desde los videojuegos hasta la inteligencia artificial, el software transforma ideas en realidad.",
+        imagen: "https://cdn-icons-png.flaticon.com/512/2721/2721243.png"
+      },
+      {
+        titulo: "Redes",
+        descripcion: "Las redes informáticas conectan millones de dispositivos en todo el mundo, permitiendo la comunicación, el intercambio de datos y el acceso a Internet. Gracias a ellas, vivimos en una sociedad interconectada que evoluciona a cada segundo.",
+        imagen: "https://cdn-icons-png.flaticon.com/512/3074/3074058.png"
+      },
+      {
+        titulo: "Seguridad informática",
+        descripcion: "La seguridad informática protege la información contra robos, virus y accesos no autorizados. Es esencial para mantener la privacidad y el funcionamiento seguro de los sistemas. Aprender sobre ciberseguridad es clave para el futuro digital.",
+        imagen: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png"
+      },
+      {
+        titulo: "Inteligencia Artificial",
+        descripcion: "La inteligencia artificial (IA) permite que las máquinas aprendan, razonen y tomen decisiones. Se aplica en medicina, transporte, educación y más. Es una de las áreas más prometedoras y desafiantes de la informática moderna.",
+        imagen: "https://cdn-icons-png.flaticon.com/512/4712/4712035.png"
+      }
+    ];
+
+    function mostrarTema(indice) {
+      const panel = document.getElementById("panelInfo");
+      const tema = temas[indice];
+      panel.innerHTML = `
+        <h3>${tema.titulo}</h3>
+        <p>${tema.descripcion}</p>
+        <img src="${tema.imagen}" alt="${tema.titulo}">
+      `;
+    }
+  </script>
+</body>
+</html>
